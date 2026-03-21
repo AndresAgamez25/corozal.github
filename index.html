@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Corozal – Perla de la Sabana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAV (shared across all pages)
+══════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" onclick="showPage('inicio')">Corozal</a>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" class="nav-link active" data-page="inicio" onclick="showPage('inicio')" data-es="Inicio" data-en="Home">Inicio</a></li>
+    <li><a href="#" class="nav-link" data-page="cultura" onclick="showPage('cultura')" data-es="Cultura" data-en="Culture">Cultura</a></li>
+    <li><a href="#" class="nav-link" data-page="eventos" onclick="showPage('eventos')" data-es="Eventos" data-en="Events">Eventos</a></li>
+    <li><a href="#" class="nav-link" data-page="historia" onclick="showPage('historia')" data-es="Historia" data-en="History">Historia</a></li>
+    <li><a href="#" class="nav-link" data-page="gastronomia" onclick="showPage('gastronomia')" data-es="Gastronomía" data-en="Gastronomy">Gastronomía</a></li>
+    <li><a href="#" class="nav-link" data-page="mapa" onclick="showPage('mapa')" data-es="Mapa" data-en="Map">Mapa</a></li>
+    <li><a href="#" class="nav-link" data-page="creditos" onclick="showPage('creditos')" data-es="Créditos" data-en="Credits">Créditos</a></li>
+  </ul>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     PAGE: INICIO
+══════════════════════════════════════════ -->
+<div id="page-inicio" class="page active">
+
+  <section id="hero">
+    <p class="hero-tag fade-up" data-es="Municipio de Sucre, Colombia" data-en="Municipality of Sucre, Colombia">Municipio de Sucre, Colombia</p>
+    <h1 class="fade-up delay-1">La <em>Perla</em><br>de la Sabana</h1>
+    <p class="hero-sub fade-up delay-2"
+       data-es="Fácil de visitar, difícil de olvidar. Corozal te recibe con historia viva, gastronomía caribe y festividades que llenan de color cada rincón."
+       data-en="Easy to visit, hard to forget. Corozal welcomes you with living history, Caribbean gastronomy and festivities that fill every corner with color.">
+      Fácil de visitar, difícil de olvidar. Corozal te recibe con historia viva, gastronomía caribe y festividades que llenan de color cada rincón.
+    </p>
+    <a href="#" class="hero-cta fade-up delay-3" onclick="showPage('cultura')" data-es="Explorar" data-en="Explore">Explorar</a>
+    <span class="hero-scroll">Scroll</span>
+  </section>
+
+  <hr class="divider"/>
+
+  <section class="section-pad">
+    <p class="section-label" data-es="Descubre Corozal" data-en="Discover Corozal">Descubre Corozal</p>
+    <h2 class="section-title" data-es="¿Qué quieres explorar?" data-en="What do you want to explore?">¿Qué quieres <em>explorar</em>?</h2>
+    <p class="section-desc"
+       data-es="Corozal es mucho más que un municipio. Es una experiencia cultural, histórica y gastronómica única en la sabana sucreña."
+       data-en="Corozal is much more than a municipality. It is a unique cultural, historical and gastronomic experience in the Sucre savannah.">
+      Corozal es mucho más que un municipio. Es una experiencia cultural, histórica y gastronómica única en la sabana sucreña.
+    </p>
+
+    <div class="preview-grid">
+      <a href="#" class="preview-card" onclick="showPage('cultura')">
+        <div class="preview-img-wrap"><img src="img/porro.jpg" alt="Cultura"/><div class="preview-overlay"></div></div>
+        <div class="preview-body">
+          <p class="preview-num">01</p>
+          <h3 class="preview-title" data-es="Cultura y Tradiciones" data-en="Culture & Traditions">Cultura y Tradiciones</h3>
+          <p class="preview-text" data-es="Folclor sabanero, cumbia, artesanías zenúes y leyendas que viven en la memoria del pueblo." data-en="Savannah folklore, cumbia, Zenú crafts and legends that live in the people's memory.">Folclor sabanero, cumbia, artesanías zenúes y leyendas que viven en la memoria del pueblo.</p>
+          <span class="preview-link" data-es="Ver sección →" data-en="View section →">Ver sección →</span>
+        </div>
+      </a>
+      <a href="#" class="preview-card" onclick="showPage('eventos')">
+        <div class="preview-img-wrap"><img src="img/carnaval.jpg" alt="Eventos"/><div class="preview-overlay"></div></div>
+        <div class="preview-body">
+          <p class="preview-num">02</p>
+          <h3 class="preview-title" data-es="Eventos y Fiestas" data-en="Events & Festivities">Eventos y Fiestas</h3>
+          <p class="preview-text" data-es="Carnavales, festivales del corozo, fiestas patronales y ferias que llenan de color el calendario." data-en="Carnivals, corozo festivals, patron feasts and fairs that fill the calendar with color.">Carnavales, festivales del corozo, fiestas patronales y ferias que llenan de color el calendario.</p>
+          <span class="preview-link" data-es="Ver sección →" data-en="View section →">Ver sección →</span>
+        </div>
+      </a>
+      <a href="#" class="preview-card" onclick="showPage('historia')">
+        <div class="preview-img-wrap"><img src="img/catedral.jpg" alt="Historia"/><div class="preview-overlay"></div></div>
+        <div class="preview-body">
+          <p class="preview-num">03</p>
+          <h3 class="preview-title" data-es="Historia e Identidad" data-en="History & Identity">Historia e Identidad</h3>
+          <p class="preview-text" data-es="Raíces zenúes, herencia colonial española y arquitectura que narra cinco siglos de historia." data-en="Zenú roots, Spanish colonial heritage and architecture narrating five centuries of history.">Raíces zenúes, herencia colonial española y arquitectura que narra cinco siglos de historia.</p>
+          <span class="preview-link" data-es="Ver sección →" data-en="View section →">Ver sección →</span>
+        </div>
+      </a>
+      <a href="#" class="preview-card" onclick="showPage('gastronomia')">
+        <div class="preview-img-wrap"><img src="img/chicha.jpg" alt="Gastronomía"/><div class="preview-overlay"></div></div>
+        <div class="preview-body">
+          <p class="preview-num">04</p>
+          <h3 class="preview-title" data-es="Gastronomía Local" data-en="Local Gastronomy">Gastronomía Local</h3>
+          <p class="preview-text" data-es="Chicha de corozo, mote de guandú, patacón con queso y los sabores únicos de la sabana." data-en="Corozo chicha, guandú stew, patacón with cheese and the unique flavors of the savannah.">Chicha de corozo, mote de guandú, patacón con queso y los sabores únicos de la sabana.</p>
+          <span class="preview-link" data-es="Ver sección →" data-en="View section →">Ver sección →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p class="logo-f">Corozal</p>
+    <p data-es="Perla de la Sabana · Sucre, Colombia" data-en="Pearl of the Savannah · Sucre, Colombia">Perla de la Sabana · Sucre, Colombia</p>
+    <p data-es="Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026" data-en="Application developed as a practical component — UNAD Multimedia Applications 213026">Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: CULTURA
+══════════════════════════════════════════ -->
+<div id="page-cultura" class="page">
+  <div class="page-hero" style="background-image:url('img/porro.jpg')">
+    <div class="page-hero-overlay">
+      <p class="hero-tag" data-es="01 — Sección" data-en="01 — Section">01 — Sección</p>
+      <h1 class="page-hero-title">Cultura y <em>Tradiciones</em></h1>
+      <p class="page-hero-sub" data-es="Corozal es epicentro cultural de la sabana sucreña, donde convergen herencias zenú, española y afrodescendiente." data-en="Corozal is the cultural epicenter of the Sucre savannah, where Zenú, Spanish and Afro-descendant heritages converge.">Corozal es epicentro cultural de la sabana sucreña, donde convergen herencias zenú, española y afrodescendiente.</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label" data-es="1.1 — Folclor Sabanero" data-en="1.1 — Savannah Folklore">1.1 — Folclor Sabanero</p>
+    <h2 class="section-title" data-es="Música, Danza y Leyendas" data-en="Music, Dance and Legends">Música, Danza y <em>Leyendas</em></h2>
+    <p class="section-desc" data-es="La música y la danza son el alma de Corozal. Haz clic en cada tarjeta para conocer más." data-en="Music and dance are the soul of Corozal. Click each card to learn more.">La música y la danza son el alma de Corozal. Haz clic en cada tarjeta para conocer más.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('porro')">
+        <img class="card-img" src="img/porro.jpg" alt="Porro"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Música" data-en="Music">Música</p>
+          <h3 class="card-title" data-es="El Porro Sabanero" data-en="The Savannah Porro">El Porro Sabanero</h3>
+          <p class="card-text" data-es="Ritmo emblemático del Caribe colombiano, declarado Patrimonio Cultural de la Nación." data-en="Emblematic rhythm of the Colombian Caribbean, declared Cultural Heritage of the Nation.">Ritmo emblemático del Caribe colombiano, declarado Patrimonio Cultural de la Nación.</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+      <a href="#" class="card card-link" onclick="openDetalle('cumbia')">
+        <img class="card-img" src="img/cumbia.jpg" alt="Cumbia"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Danza" data-en="Dance">Danza</p>
+          <h3 class="card-title" data-es="La Cumbia Corozalera" data-en="The Corozal Cumbia">La Cumbia Corozalera</h3>
+          <p class="card-text" data-es="La cumbia se baila en las noches corozaleras con velas encendidas al son de las gaitas." data-en="Cumbia is danced on Corozal nights with lit candles to the sound of the gaitas.">La cumbia se baila en las noches corozaleras con velas encendidas al son de las gaitas.</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+      <a href="#" class="card card-link" onclick="openDetalle('leyendas')">
+        <img class="card-img" src="img/leyendas.jpg" alt="Leyendas"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Tradición Oral" data-en="Oral Tradition">Tradición Oral</p>
+          <h3 class="card-title" data-es="Leyendas y Mitos Sabaneros" data-en="Savannah Legends & Myths">Leyendas y Mitos Sabaneros</h3>
+          <p class="card-text" data-es="Corozal conserva relatos de La Llorona, El Mohán y la leyenda de 'Las Brujas'." data-en="Corozal preserves stories of La Llorona, El Mohán and the legend of 'Las Brujas'.">Corozal conserva relatos de La Llorona, El Mohán y la leyenda de "Las Brujas".</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label" data-es="1.2 — Artesanías" data-en="1.2 — Crafts">1.2 — Artesanías</p>
+    <h2 class="section-title" data-es="Arte y Tradición en las Manos" data-en="Art and Tradition in the Hands">Arte y <em>Tradición</em> en las Manos</h2>
+    <p class="section-desc" data-es="Las artesanías de Corozal son herencia directa de los pueblos zenúes. Haz clic para explorar." data-en="Corozal's crafts are a direct heritage from the Zenú peoples. Click to explore.">Las artesanías de Corozal son herencia directa de los pueblos zenúes. Haz clic para explorar.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('vueltiao')">
+        <img class="card-img" src="img/vueltiao.jpg" alt="Vueltiao"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Tejido" data-en="Weaving">Tejido</p>
+          <h3 class="card-title" data-es="Sombrero Vueltiao" data-en="Sombrero Vueltiao">Sombrero Vueltiao</h3>
+          <p class="card-text" data-es="Símbolo nacional tejido con caña flecha por artesanos de las sabanas de Sucre." data-en="National symbol woven with caña flecha by artisans from the savannahs of Sucre.">Símbolo nacional tejido con caña flecha por artesanos de las sabanas de Sucre.</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+      <a href="#" class="card card-link" onclick="openDetalle('hamacas')">
+        <img class="card-img" src="img/hamacas.jpg" alt="Hamacas"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Artesanía" data-en="Craft">Artesanía</p>
+          <h3 class="card-title" data-es="Hamacas y Tapetes Zenú" data-en="Zenú Hammocks & Rugs">Hamacas y Tapetes Zenú</h3>
+          <p class="card-text" data-es="Tejidas con diseños geométricos que narran la cosmovisión zenú." data-en="Woven with geometric designs that narrate the Zenú worldview.">Tejidas con diseños geométricos que narran la cosmovisión zenú.</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+      <a href="#" class="card card-link" onclick="openDetalle('ceramica')">
+        <img class="card-img" src="img/ceramica.jpg" alt="Cerámica"/>
+        <div class="card-body">
+          <p class="card-tag" data-es="Cerámica" data-en="Ceramics">Cerámica</p>
+          <h3 class="card-title" data-es="Cerámica de Barro Local" data-en="Local Clay Ceramics">Cerámica de Barro Local</h3>
+          <p class="card-text" data-es="Técnica prehispánica viva en las manos de los alfareros corozaleros." data-en="Pre-Hispanic technique alive in the hands of Corozal's potters.">Técnica prehispánica viva en las manos de los alfareros corozaleros.</p>
+          <span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('inicio')" data-es="← Inicio" data-en="← Home">← Inicio</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('eventos')" data-es="Eventos →" data-en="Events →">Eventos →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: EVENTOS
+══════════════════════════════════════════ -->
+<div id="page-eventos" class="page">
+  <div class="page-hero" style="background-image:url('img/carnaval.jpg')">
+    <div class="page-hero-overlay">
+      <p class="hero-tag" data-es="02 — Sección" data-en="02 — Section">02 — Sección</p>
+      <h1 class="page-hero-title">Eventos y <em>Fiestas</em></h1>
+      <p class="page-hero-sub" data-es="El calendario corozalero es una explosión de color, música y comunidad durante todo el año." data-en="The Corozal calendar is an explosion of color, music and community throughout the year.">El calendario corozalero es una explosión de color, música y comunidad durante todo el año.</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label" data-es="2.1 — Carnavales" data-en="2.1 — Carnivals">2.1 — Carnavales</p>
+    <h2 class="section-title" data-es="Carnavales de Corozal" data-en="Corozal Carnivals"><em>Carnavales</em> de Corozal</h2>
+    <p class="section-desc" data-es="Los carnavales son la máxima expresión festiva. Haz clic para conocer cada celebración." data-en="Carnivals are the ultimate festive expression. Click to discover each celebration.">Los carnavales son la máxima expresión festiva. Haz clic para conocer cada celebración.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('carnaval')"><img class="card-img" src="img/carnaval.jpg" alt="Carnaval"/><div class="card-body"><p class="card-tag" data-es="Febrero · Desde 1967" data-en="February · Since 1967">Febrero · Desde 1967</p><h3 class="card-title" data-es="Carnaval de Corozal" data-en="Corozal Carnival">Carnaval de Corozal</h3><p class="card-text" data-es="Uno de los carnavales más grandes de la región sabanera con carrozas y comparsas." data-en="One of the largest carnivals in the savannah region with floats and dance groups.">Uno de los carnavales más grandes de la región sabanera con carrozas y comparsas.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('carnavalito')"><img class="card-img" src="img/carnavalito.jpg" alt="Carnavalito"/><div class="card-body"><p class="card-tag" data-es="Febrero · Infantil" data-en="February · Children's">Febrero · Infantil</p><h3 class="card-title" data-es="Carnavalito de Corozal" data-en="Little Carnival of Corozal">Carnavalito de Corozal</h3><p class="card-text" data-es="Versión infantil donde niñas y niños participan con disfraces y bailes." data-en="Children's version where girls and boys participate with costumes and dances.">Versión infantil donde niñas y niños participan con disfraces y bailes.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('noches')"><img class="card-img" src="img/noches.jpg" alt="Noches"/><div class="card-body"><p class="card-tag" data-es="Anual · Folclor" data-en="Annual · Folklore">Anual · Folclor</p><h3 class="card-title" data-es="Noches Corozaleras" data-en="Corozal Nights">Noches Corozaleras</h3><p class="card-text" data-es="Evento folclórico con reinas, comparsas y artistas que reúne a toda la comunidad." data-en="Folklore event with queens, groups and artists that brings the community together.">Evento folclórico con reinas, comparsas y artistas que reúne a toda la comunidad.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label" data-es="2.2 — Festivales" data-en="2.2 — Festivals">2.2 — Festivales</p>
+    <h2 class="section-title" data-es="Festivales y Tradiciones" data-en="Festivals and Traditions"><em>Festivales</em> y Tradiciones</h2>
+    <p class="section-desc" data-es="Más allá del carnaval, Corozal celebra su tierra y su santo patrón." data-en="Beyond carnival, Corozal celebrates its land and patron saint.">Más allá del carnaval, Corozal celebra su tierra y su santo patrón.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('festival-corozo')"><img class="card-img" src="img/corozo.jpg" alt="Festival"/><div class="card-body"><p class="card-tag" data-es="Cultural · Gastronómico" data-en="Cultural · Gastronomic">Cultural · Gastronómico</p><h3 class="card-title" data-es="Festival Nacional del Corozo" data-en="National Corozo Festival">Festival Nacional del Corozo</h3><p class="card-text" data-es="Homenaje a la palma que da nombre al municipio con música y chicha de corozo." data-en="Tribute to the palm that gives the municipality its name with music and corozo chicha.">Homenaje a la palma que da nombre al municipio con música y chicha de corozo.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('san-jose')"><img class="card-img" src="img/sanjose.jpg" alt="San José"/><div class="card-body"><p class="card-tag" data-es="Religioso · Patronal" data-en="Religious · Patron">Religioso · Patronal</p><h3 class="card-title" data-es="Fiestas de San José" data-en="San José Feast Days">Fiestas de San José</h3><p class="card-text" data-es="Celebración patronal con misas, procesiones y actividades culturales." data-en="Patron celebration with masses, processions and cultural activities.">Celebración patronal con misas, procesiones y actividades culturales.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('feria')"><img class="card-img" src="img/feria.jpg" alt="Feria"/><div class="card-body"><p class="card-tag" data-es="Comercial · Anual" data-en="Commercial · Annual">Comercial · Anual</p><h3 class="card-title" data-es="Feria Agropecuaria de Corozal" data-en="Corozal Agricultural Fair">Feria Agropecuaria de Corozal</h3><p class="card-text" data-es="Muestra del potencial agrícola y ganadero de la sabana sucreña." data-en="Showcase of the savannah's agricultural and livestock potential.">Muestra del potencial agrícola y ganadero de la sabana sucreña.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('cultura')" data-es="← Cultura" data-en="← Culture">← Cultura</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('historia')" data-es="Historia →" data-en="History →">Historia →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: HISTORIA
+══════════════════════════════════════════ -->
+<div id="page-historia" class="page">
+  <div class="page-hero" style="background-image:url('img/catedral.jpg')">
+    <div class="page-hero-overlay">
+      <p class="hero-tag" data-es="03 — Sección" data-en="03 — Section">03 — Sección</p>
+      <h1 class="page-hero-title">Historia e <em>Identidad</em></h1>
+      <p class="page-hero-sub" data-es="Fundada en tierras zenúes, Corozal guarda cinco siglos de historia en su arquitectura y relatos." data-en="Founded on Zenú lands, Corozal holds five centuries of history in its architecture and stories.">Fundada en tierras zenúes, Corozal guarda cinco siglos de historia en su arquitectura y relatos.</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label" data-es="3.1 — Herencia Colonial" data-en="3.1 — Colonial Heritage">3.1 — Herencia Colonial</p>
+    <h2 class="section-title" data-es="Raíces e Historia" data-en="Roots and History">Raíces e <em>Historia</em></h2>
+    <p class="section-desc" data-es="Desde los zenúes hasta la conquista, cada época dejó su huella en Corozal." data-en="From the Zenú to the conquest, each era left its mark on Corozal.">Desde los zenúes hasta la conquista, cada época dejó su huella en Corozal.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('zenu')"><img class="card-img" src="img/zenu.jpg" alt="Zenú"/><div class="card-body"><p class="card-tag" data-es="Prehispánico" data-en="Pre-Hispanic">Prehispánico</p><h3 class="card-title" data-es="Raíces del Pueblo Zenú" data-en="Zenú People's Roots">Raíces del Pueblo Zenú</h3><p class="card-text" data-es="Los zenúes habitaron estas tierras dejando un legado de irrigación, oro y textiles." data-en="The Zenú inhabited these lands leaving a legacy of irrigation, gold and textiles.">Los zenúes habitaron estas tierras dejando un legado de irrigación, oro y textiles.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('fundacion')"><img class="card-img" src="img/fundacion.jpg" alt="Fundación"/><div class="card-body"><p class="card-tag" data-es="Siglo XVII" data-en="17th Century">Siglo XVII</p><h3 class="card-title" data-es="Fundación del Corregimiento" data-en="Founding of the Settlement">Fundación del Corregimiento</h3><p class="card-text" data-es="En el siglo XVII Corozal pasó de asentamiento indígena a corregimiento español." data-en="In the 17th century Corozal went from indigenous settlement to Spanish corregimiento.">En el siglo XVII Corozal pasó de asentamiento indígena a corregimiento español.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('aeropuerto')"><img class="card-img" src="img/aeropuerto.jpg" alt="Aeropuerto"/><div class="card-body"><p class="card-tag" data-es="Historia · Leyenda" data-en="History · Legend">Historia · Leyenda</p><h3 class="card-title" data-es="Aeropuerto Las Brujas" data-en="Las Brujas Airport">Aeropuerto Las Brujas</h3><p class="card-text" data-es="Un lugar cargado de leyenda donde la historia y el misticismo se unen." data-en="A place full of legend where history and mysticism meet.">Un lugar cargado de leyenda donde la historia y el misticismo se unen.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label" data-es="3.2 — Arquitectura" data-en="3.2 — Architecture">3.2 — Arquitectura</p>
+    <h2 class="section-title" data-es="Arquitectura Histórica" data-en="Historic Architecture"><em>Arquitectura</em> Histórica</h2>
+    <p class="section-desc" data-es="Las calles de Corozal son un museo a cielo abierto. Haz clic para explorar." data-en="Corozal's streets are an open-air museum. Click to explore.">Las calles de Corozal son un museo a cielo abierto. Haz clic para explorar.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('catedral')"><img class="card-img" src="img/catedral.jpg" alt="Catedral"/><div class="card-body"><p class="card-tag" data-es="Patrimonio" data-en="Heritage">Patrimonio</p><h3 class="card-title" data-es="Catedral San José de Corozal" data-en="San José Cathedral">Catedral San José de Corozal</h3><p class="card-text" data-es="Arquitectura colonial y republicana con detalles en mármol. Corazón espiritual del municipio." data-en="Colonial and republican architecture with marble details. Spiritual heart of the municipality.">Arquitectura colonial y republicana con detalles en mármol. Corazón espiritual del municipio.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('casas')"><img class="card-img" src="img/casas.jpg" alt="Casas"/><div class="card-body"><p class="card-tag" data-es="Siglo XIX" data-en="19th Century">Siglo XIX</p><h3 class="card-title" data-es="Casas Republicanas y Neoclásicas" data-en="Republican & Neoclassical Houses">Casas Republicanas y Neoclásicas</h3><p class="card-text" data-es="Edificaciones del siglo XIX en estilo republicano junto a casas de bahareque." data-en="19th-century buildings in republican style alongside bahareque houses.">Edificaciones del siglo XIX en estilo republicano junto a casas de bahareque.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('plaza')"><img class="card-img" src="img/plaza.jpg" alt="Plaza"/><div class="card-body"><p class="card-tag" data-es="Vida Urbana" data-en="Urban Life">Vida Urbana</p><h3 class="card-title" data-es="Plaza Central de Corozal" data-en="Corozal Central Plaza">Plaza Central de Corozal</h3><p class="card-text" data-es="El corazón de la ciudad donde confluyen gastronomía, artesanías e historia." data-en="The heart of the city where gastronomy, crafts and history converge.">El corazón de la ciudad donde confluyen gastronomía, artesanías e historia.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('eventos')" data-es="← Eventos" data-en="← Events">← Eventos</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('gastronomia')" data-es="Gastronomía →" data-en="Gastronomy →">Gastronomía →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: GASTRONOMÍA
+══════════════════════════════════════════ -->
+<div id="page-gastronomia" class="page">
+  <div class="page-hero" style="background-image:url('img/chicha.jpg')">
+    <div class="page-hero-overlay">
+      <p class="hero-tag" data-es="04 — Sección" data-en="04 — Section">04 — Sección</p>
+      <h1 class="page-hero-title"><em>Gastronomía</em> Local</h1>
+      <p class="page-hero-sub" data-es="Una fusión de sabores zenúes, españoles y africanos que conquista a todo visitante." data-en="A fusion of Zenú, Spanish and African flavors that conquers every visitor.">Una fusión de sabores zenúes, españoles y africanos que conquista a todo visitante.</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label" data-es="4.1 — Platos Típicos" data-en="4.1 — Typical Dishes">4.1 — Platos Típicos</p>
+    <h2 class="section-title" data-es="Platos de la Sabana" data-en="Savannah Dishes"><em>Platos</em> de la Sabana</h2>
+    <p class="section-desc" data-es="Platos que narran siglos de mestizaje culinario. Haz clic para conocer cada uno." data-en="Dishes that narrate centuries of culinary mestizaje. Click to discover each one.">Platos que narran siglos de mestizaje culinario. Haz clic para conocer cada uno.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('patacon')"><img class="card-img" src="img/patacon.jpg" alt="Patacón"/><div class="card-body"><p class="card-tag" data-es="Plato típico" data-en="Typical dish">Plato típico</p><h3 class="card-title" data-es="Patacón con Queso" data-en="Patacón with Cheese">Patacón con Queso</h3><p class="card-text" data-es="Plátano verde frito y crujiente con queso costeño derretido. Infaltable en desayunos." data-en="Crispy fried green plantain with melted coastal cheese. Essential at breakfast.">Plátano verde frito y crujiente con queso costeño derretido. Infaltable en desayunos.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('mote')"><img class="card-img" src="img/mote.jpg" alt="Mote"/><div class="card-body"><p class="card-tag" data-es="Sopa tradicional" data-en="Traditional soup">Sopa tradicional</p><h3 class="card-title" data-es="Mote de Guandú" data-en="Guandú Stew">Mote de Guandú</h3><p class="card-text" data-es="Sopa zenú de guandú, ñame, yuca y cerdo. Uno de los platos más representativos." data-en="Zenú soup of guandú, yam, cassava and pork. One of the most representative dishes.">Sopa zenú de guandú, ñame, yuca y cerdo. Uno de los platos más representativos.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('arroz')"><img class="card-img" src="img/arroz.jpg" alt="Arroz"/><div class="card-body"><p class="card-tag" data-es="Arroz típico" data-en="Typical rice">Arroz típico</p><h3 class="card-title" data-es="Arroz de Cañandonga" data-en="Cañandonga Rice">Arroz de Cañandonga</h3><p class="card-text" data-es="Arroz con coco y especias locales. Acompañante insustituible de la mesa corozalera." data-en="Rice with coconut and local spices. Irreplaceable side dish at the Corozal table.">Arroz con coco y especias locales. Acompañante insustituible de la mesa corozalera.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label" data-es="4.2 — Bebidas Típicas" data-en="4.2 — Typical Drinks">4.2 — Bebidas Típicas</p>
+    <h2 class="section-title" data-es="Bebidas de la Sabana" data-en="Savannah Drinks"><em>Bebidas</em> de la Sabana</h2>
+    <p class="section-desc" data-es="Frutos tropicales convertidos en bebidas únicas e irrepetibles." data-en="Tropical fruits turned into unique and unrepeatable drinks.">Frutos tropicales convertidos en bebidas únicas e irrepetibles.</p>
+    <div class="cards-grid">
+      <a href="#" class="card card-link" onclick="openDetalle('chicha')"><img class="card-img" src="img/chicha.jpg" alt="Chicha"/><div class="card-body"><p class="card-tag" data-es="Bebida ancestral" data-en="Ancestral drink">Bebida ancestral</p><h3 class="card-title" data-es="Chicha de Corozo" data-en="Corozo Chicha">Chicha de Corozo</h3><p class="card-text" data-es="La bebida más emblemática de Corozal, elaborada con la palma que da nombre al municipio." data-en="The most emblematic drink of Corozal, made from the palm that gives the municipality its name.">La bebida más emblemática de Corozal, elaborada con la palma que da nombre al municipio.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('tamarindo')"><img class="card-img" src="img/tamarindo.jpg" alt="Tamarindo"/><div class="card-body"><p class="card-tag" data-es="Fresco tropical" data-en="Tropical fresh drink">Fresco tropical</p><h3 class="card-title" data-es="Jugo de Tamarindo" data-en="Tamarind Juice">Jugo de Tamarindo</h3><p class="card-text" data-es="El refresco más popular para combatir el calor de la sabana sucreña." data-en="The most popular refreshment to beat the heat of the Sucre savannah.">El refresco más popular para combatir el calor de la sabana sucreña.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+      <a href="#" class="card card-link" onclick="openDetalle('matraca')"><img class="card-img" src="img/matraca.jpg" alt="Matraca"/><div class="card-body"><p class="card-tag" data-es="Fresco regional" data-en="Regional fresh drink">Fresco regional</p><h3 class="card-title" data-es="Jugo de Matraca" data-en="Matraca Juice">Jugo de Matraca</h3><p class="card-text" data-es="Fruto silvestre único de la sabana, tesoro gastronómico del Caribe colombiano." data-en="Wild fruit unique to the savannah, gastronomic treasure of the Colombian Caribbean.">Fruto silvestre único de la sabana, tesoro gastronómico del Caribe colombiano.</p><span class="card-more" data-es="Ver más →" data-en="Read more →">Ver más →</span></div></a>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('historia')" data-es="← Historia" data-en="← History">← Historia</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('mapa')" data-es="Mapa →" data-en="Map →">Mapa →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: MAPA
+══════════════════════════════════════════ -->
+<div id="page-mapa" class="page">
+  <section class="section-pad" style="padding-top:7rem;">
+    <p class="section-label" data-es="Rutas — Navegación" data-en="Routes — Navigation">Rutas — Navegación</p>
+    <h2 class="section-title" data-es="Explora Corozal" data-en="Explore Corozal">Explora <em>Corozal</em></h2>
+    <p class="section-desc" data-es="Navega los puntos de interés del municipio. Cada lugar tiene su historia y su sabor." data-en="Navigate the municipality's points of interest. Each place has its history and flavor.">Navega los puntos de interés del municipio. Cada lugar tiene su historia y su sabor.</p>
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62837.0!2d-75.2939!3d9.3206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5a6c3d5c3c3c3d%3A0x1!2sCorozal%2C+Sucre%2C+Colombia!5e0!3m2!1ses!2sco!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-points">
+        <div class="map-point"><p class="mp-num">01</p><p class="mp-name" data-es="Catedral San José" data-en="San José Cathedral">Catedral San José</p><p class="mp-desc" data-es="Centro histórico" data-en="Historic center">Centro histórico</p></div>
+        <div class="map-point"><p class="mp-num">02</p><p class="mp-name" data-es="Plaza Central" data-en="Central Plaza">Plaza Central</p><p class="mp-desc" data-es="Vida urbana" data-en="Urban life">Vida urbana</p></div>
+        <div class="map-point"><p class="mp-num">03</p><p class="mp-name" data-es="Aeropuerto Las Brujas" data-en="Las Brujas Airport">Aeropuerto Las Brujas</p><p class="mp-desc" data-es="Historia y leyenda" data-en="History & legend">Historia y leyenda</p></div>
+        <div class="map-point"><p class="mp-num">04</p><p class="mp-name" data-es="Plaza de Mercado" data-en="Market Square">Plaza de Mercado</p><p class="mp-desc" data-es="Gastronomía local" data-en="Local gastronomy">Gastronomía local</p></div>
+        <div class="map-point"><p class="mp-num">05</p><p class="mp-name" data-es="Bosque Natural" data-en="Natural Forest">Bosque Natural</p><p class="mp-desc" data-es="Ecoturismo" data-en="Ecotourism">Ecoturismo</p></div>
+        <div class="map-point"><p class="mp-num">06</p><p class="mp-name" data-es="Paisajes Sabaneros" data-en="Savannah Landscapes">Paisajes Sabaneros</p><p class="mp-desc" data-es="Naturaleza" data-en="Nature">Naturaleza</p></div>
+      </div>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('gastronomia')" data-es="← Gastronomía" data-en="← Gastronomy">← Gastronomía</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('inicio')" data-es="Inicio →" data-en="Home →">Inicio →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: CRÉDITOS
+══════════════════════════════════════════ -->
+<div id="page-creditos" class="page">
+  <div class="page-hero" style="background: linear-gradient(160deg,rgba(15,14,12,0.97) 0%,rgba(200,151,58,0.12) 100%),#0F0E0C; min-height:260px;">
+    <div class="page-hero-overlay" style="background:none;">
+      <p class="hero-tag">Referencias y Créditos</p>
+      <h1 class="page-hero-title">Créditos y <em>Referencias</em></h1>
+      <p class="page-hero-sub">Fuentes bibliográficas, imágenes y reconocimientos. Formato APA 7.ª edición.</p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label">Inteligencia Artificial</p>
+    <h2 class="section-title">Uso de <em>Inteligencia Artificial</em></h2>
+    <div class="creditos-block">
+      <p style="opacity:.75;line-height:1.8;margin-bottom:1.2rem;">El contenido textual y el código de esta aplicación fueron desarrollados con apoyo de <strong>Claude (Anthropic)</strong>, un asistente de inteligencia artificial. El estudiante supervisó, validó y ajustó todo el contenido generado.</p>
+      <div class="apa-ref"><p>Anthropic. (2025). <em>Claude</em> (Versión Sonnet 4.6) [Modelo de inteligencia artificial]. Anthropic. <a href="https://www.anthropic.com" target="_blank">https://www.anthropic.com</a></p></div>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label">Fuentes Bibliográficas</p>
+    <h2 class="section-title">Referencias <em>APA 7</em></h2>
+    <div class="creditos-block">
+      <h3 class="creditos-subtitulo">Historia y Patrimonio</h3>
+      <div class="apa-ref"><p>Alcaldía Municipal de Corozal. (2020). <em>Plan de Desarrollo Municipal de Corozal 2020–2023</em>. Alcaldía de Corozal, Sucre. <a href="https://www.corozal-sucre.gov.co" target="_blank">https://www.corozal-sucre.gov.co</a></p></div>
+      <div class="apa-ref"><p>Banco de la República de Colombia. (2023). <em>Zenú: Orfebrería y cultura</em>. Museo del Oro. <a href="https://www.banrepcultural.org/museo-del-oro/sociedades/zenu" target="_blank">https://www.banrepcultural.org</a></p></div>
+      <div class="apa-ref"><p>Fals Borda, O. (1986). <em>Historia doble de la Costa: Mompox y Loba</em> (Vol. 1). Carlos Valencia Editores.</p></div>
+      <div class="apa-ref"><p>Ministerio de Cultura de Colombia. (2013). <em>Resolución 2237 de 2013: El porro declarado Patrimonio Cultural Inmaterial de la Nación</em>. <a href="https://www.mincultura.gov.co" target="_blank">https://www.mincultura.gov.co</a></p></div>
+      <div class="apa-ref"><p>Ministerio de Cultura de Colombia. (2004). <em>Ley 908 de 2004: El sombrero vueltiao como símbolo cultural de la Nación</em>. <a href="https://www.suin-juriscol.gov.co" target="_blank">https://www.suin-juriscol.gov.co</a></p></div>
+      <div class="apa-ref"><p>Plazas, C., Falchetti, A. M., Saénz Samper, J., & Archila, S. (1993). <em>La sociedad hidráulica zenú</em>. Banco de la República.</p></div>
+
+      <h3 class="creditos-subtitulo" style="margin-top:2rem;">Cultura y Folclor</h3>
+      <div class="apa-ref"><p>Abadía Morales, G. (1983). <em>Compendio general del folclor colombiano</em> (4.ª ed.). Biblioteca Banco Popular.</p></div>
+      <div class="apa-ref"><p>Ocampo López, J. (2006). <em>Folclor, costumbres y tradiciones colombianas</em>. Plaza & Janés Editores.</p></div>
+      <div class="apa-ref"><p>Ministerio de Cultura de Colombia. (2017). <em>Sombrero vueltiao zenú: Declaratoria como Patrimonio Cultural Inmaterial</em>. <a href="https://patrimonio.mincultura.gov.co" target="_blank">https://patrimonio.mincultura.gov.co</a></p></div>
+
+      <h3 class="creditos-subtitulo" style="margin-top:2rem;">Gastronomía</h3>
+      <div class="apa-ref"><p>Ministerio de Comercio, Industria y Turismo de Colombia. (2021). <em>Gastronomía del Caribe colombiano</em>. ProColombia. <a href="https://www.procolombia.co" target="_blank">https://www.procolombia.co</a></p></div>
+      <div class="apa-ref"><p>Villegas Botero, L. (1999). <em>Cocina colombiana</em>. Villegas Editores.</p></div>
+
+      <h3 class="creditos-subtitulo" style="margin-top:2rem;">Fuentes Web Institucionales</h3>
+      <div class="apa-ref"><p>Alcaldía de Corozal. (2024). <em>Sitio web oficial del municipio de Corozal, Sucre</em>. <a href="https://www.corozal-sucre.gov.co" target="_blank">https://www.corozal-sucre.gov.co</a></p></div>
+      <div class="apa-ref"><p>ProColombia. (2024). <em>Sucre: Turismo, cultura e historia</em>. <a href="https://www.colombia.travel/es/sucre" target="_blank">https://www.colombia.travel/es/sucre</a></p></div>
+      <div class="apa-ref"><p>Wikipedia. (2024). <em>Corozal (Sucre)</em>. Wikimedia Foundation. <a href="https://es.wikipedia.org/wiki/Corozal_(Sucre)" target="_blank">https://es.wikipedia.org/wiki/Corozal_(Sucre)</a></p></div>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <p class="section-label">Recursos Visuales</p>
+    <h2 class="section-title">Créditos de <em>Imágenes</em></h2>
+    <div class="creditos-block">
+      <div class="creditos-aviso"><p>⚠️ <strong>Importante:</strong> Las imágenes utilizadas en esta aplicación fueron obtenidas de fuentes de uso libre y acceso público disponibles en internet. A continuación se detalla cada imagen, su descripción, el tipo de imagen recomendado y las fuentes sugeridas para obtenerla.</p></div>
+      <div class="img-credit-grid">
+        <div class="img-credit-item"><p class="img-credit-name">01 · hero.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Paisaje urbano o vista aérea del municipio de Corozal, sabana al fondo.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · colombia.travel · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">02 · porro.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Banda de músicos tocando porro sabanero en un festival o carnaval.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">03 · cumbia.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Grupo de danza folclórica bailando cumbia con velas y vestidos coloridos.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · colombia.travel · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">04 · leyendas.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Paisaje nocturno de la sabana colombiana, atmósfera misteriosa o neblina.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com (uso libre)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">05 · vueltiao.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Primer plano de un sombrero vueltiao sobre fondo oscuro o en manos de artesano.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · artesaniasdecolombia.com.co</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">06 · hamacas.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Hamacas o tapetes zenúes tejidos, coloridos, colgados o extendidos.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · artesaniasdecolombia.com.co · flickr.com (CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">07 · ceramica.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Múcuras, ollas o figuras de barro artesanales de la región Caribe.</p><p class="img-credit-autor"><strong>Buscar en:</strong> artesaniasdecolombia.com.co · commons.wikimedia.org</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">08 · carnaval.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Desfile de carnaval con carrozas, disfraces y comparsas en una calle.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC) · colombia.travel</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">09 · carnavalito.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Niños disfrazados participando en un desfile o carnaval infantil.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">10 · noches.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Escenario iluminado con público en una plaza durante festival nocturno.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">11 · corozo.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Palma de corozo con sus frutos amarillos-naranjas visibles en la sabana.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · inaturalist.org (CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">12 · sanjose.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Procesión religiosa o misa solemne en una plaza de municipio colombiano.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">13 · feria.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Exposición de ganado bovino o feria agropecuaria en Colombia.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">14 · zenu.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Pieza de orfebrería zenú, cerámica prehispánica o ilustración de cultura zenú.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · colecciones.banrepcultural.org</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">15 · fundacion.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Arquitectura colonial de un municipio del Caribe colombiano, calles históricas.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · colombia.travel · flickr.com (CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">16 · aeropuerto.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Vista exterior del Aeropuerto Las Brujas de Corozal o pista de aterrizaje.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">17 · catedral.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Fachada de la Catedral San José de Corozal o interior con altar.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">18 · casas.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Casas de estilo republicano o colonial en el centro histórico de Corozal.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">19 · plaza.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Plaza Central de Corozal con la catedral al fondo o vista general.</p><p class="img-credit-autor"><strong>Buscar en:</strong> commons.wikimedia.org · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">20 · patacon.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Patacón con queso costeño derretido, plato servido en mesa o bandeja.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">21 · mote.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Plato de sopa espesa con frijoles, yuca y ñame visible, cocina caribeña.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">22 · arroz.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Arroz de coco de color dorado servido en plato o cazuela.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">23 · chicha.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Vaso o jarra de bebida rojiza tropical, frutos de corozo alrededor.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">24 · tamarindo.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Vaso de jugo de tamarindo con frutos de tamarindo al lado.</p><p class="img-credit-autor"><strong>Buscar en:</strong> unsplash.com · pexels.com · flickr.com (licencia CC)</p></div>
+        <div class="img-credit-item"><p class="img-credit-name">25 · matraca.jpg</p><p class="img-credit-desc"><strong>Tipo:</strong> Fruto tropical silvestre anaranjado o jugo en vaso con fruto al lado.</p><p class="img-credit-autor"><strong>Buscar en:</strong> inaturalist.org · commons.wikimedia.org · flickr.com (CC)</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider"/>
+  <section class="section-pad bg-alt">
+    <p class="section-label">Herramientas</p>
+    <h2 class="section-title">Tecnologías <em>Utilizadas</em></h2>
+    <div class="creditos-block">
+      <div class="apa-ref"><p>Anthropic. (2025). <em>Claude</em> (Versión Sonnet 4.6) [Asistente IA]. <a href="https://www.anthropic.com/claude" target="_blank">https://www.anthropic.com/claude</a></p></div>
+      <div class="apa-ref"><p>Google. (2024). <em>Google Fonts</em> [Tipografías web]. <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a></p></div>
+      <div class="apa-ref"><p>Google. (2024). <em>Google Maps Embed API</em> [Mapas web]. <a href="https://developers.google.com/maps" target="_blank">https://developers.google.com/maps</a></p></div>
+      <div class="apa-ref"><p>Microsoft. (2024). <em>Visual Studio Code</em> (v1.95) [Editor de código]. <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p></div>
+      <div class="apa-ref"><p>Netlify. (2024). <em>Netlify Deploy</em> [Alojamiento web]. <a href="https://www.netlify.com" target="_blank">https://www.netlify.com</a></p></div>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" onclick="showPage('inicio')" data-es="← Inicio" data-en="← Home">← Inicio</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('mapa')" data-es="Mapa →" data-en="Map →">Mapa →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: DETALLE (una sola plantilla reutilizable)
+══════════════════════════════════════════ -->
+<div id="page-detalle" class="page">
+  <div class="page-hero" id="detalle-hero" style="background-image:url('')">
+    <div class="page-hero-overlay">
+      <p class="hero-tag" id="detalle-tag"></p>
+      <h1 class="page-hero-title" id="detalle-titulo"></h1>
+      <p class="page-hero-sub" id="detalle-subtitulo"></p>
+    </div>
+  </div>
+  <hr class="divider"/>
+  <section class="section-pad">
+    <div class="detalle-layout">
+      <div class="detalle-img-wrap">
+        <img id="detalle-img" src="" alt="" class="detalle-img"/>
+      </div>
+      <div class="detalle-content">
+        <p class="section-label" id="detalle-label"></p>
+        <h2 class="section-title" id="detalle-h2"></h2>
+        <div class="detalle-body" id="detalle-body"></div>
+      </div>
+    </div>
+  </section>
+  <div class="page-nav">
+    <a href="#" class="page-nav-btn" id="detalle-back" onclick="">← Volver</a>
+    <a href="#" class="page-nav-btn" onclick="showPage('inicio')" data-es="Inicio →" data-en="Home →">Inicio →</a>
+  </div>
+  <footer class="main-footer"><p class="logo-f">Corozal</p><p>Perla de la Sabana · Sucre, Colombia</p><p>Aplicación desarrollada como componente práctico — Aplicaciones Multimedia UNAD 213026</p></footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
