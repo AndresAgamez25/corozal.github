@@ -1,2 +1,2 @@
 # corozal.github
-Página sobre mi ciudad
+Página sobre mi ciudad.
