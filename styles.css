@@ -14,11 +14,12 @@
   --dark-4: #1C1A16;
   --card:   #131109;
 
+  /* MEJORA 1: Mayor luminosidad en --cream y --muted para mejor contraste */
   --white:  #FDFAF4;
-  --cream:  #EDE8DC;
-  --muted:  rgba(237,232,220,0.50);
-  --dim:    rgba(237,232,220,0.26);
-  --faint:  rgba(237,232,220,0.10);
+  --cream:  #F5F0E8;        /* era #EDE8DC — +5% luminosidad */
+  --muted:  rgba(245,240,232,0.68); /* era 0.50 — más legible sobre oscuro */
+  --dim:    rgba(245,240,232,0.36); /* era 0.26 */
+  --faint:  rgba(245,240,232,0.13); /* era 0.10 */
 
   --b:      rgba(200,151,58,0.11);
   --b-md:   rgba(200,151,58,0.22);
@@ -122,6 +123,7 @@ nav.scrolled {
 .nav-links a:hover { opacity: 0.88; color: var(--gold); }
 .nav-links a.active { opacity: 1; color: var(--gold); background: var(--gold-dim); }
 
+/* MEJORA 2 + 4: Botón lang más grande y visible en móvil */
 .lang-btn {
   background: transparent; border: 1px solid var(--b-md);
   color: var(--gold); padding: 0.35rem 0.9rem;
@@ -131,10 +133,19 @@ nav.scrolled {
   text-transform: uppercase;
   transition: background 0.22s, color 0.22s, border-color 0.22s;
   flex-shrink: 0;
+  min-width: 48px; min-height: 36px; /* área de toque mínima */
 }
 .lang-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
 
-.hamburger { display: none; background: none; border: none; color: var(--gold); font-size: 1.4rem; cursor: none; }
+/* MEJORA 2: Hamburguesa más grande y clara */
+.hamburger {
+  display: none; background: none; border: 1px solid var(--b-md);
+  color: var(--gold); font-size: 1.3rem; cursor: none;
+  border-radius: var(--r); padding: 0.35rem 0.7rem;
+  min-width: 48px; min-height: 44px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.hamburger:hover { background: var(--gold-dim); border-color: var(--gold); }
 
 /* ══════════════════════════════
    HERO — parallax + layers
@@ -314,11 +325,11 @@ nav.scrolled {
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 0.6rem;
   padding: 0.93rem 2rem;
-  background: rgba(237,232,220,0.05);
+  background: rgba(245,240,232,0.05);
   color: var(--cream); font-size: 0.78rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   border-radius: var(--r);
-  border: 1px solid rgba(237,232,220,0.2); cursor: none;
+  border: 1px solid rgba(245,240,232,0.2); cursor: none;
   transition: all 0.25s var(--ease);
   backdrop-filter: blur(8px);
 }
@@ -556,12 +567,27 @@ nav.scrolled {
 .page-hero-sub { max-width: 550px; font-size: 0.98rem; line-height: 1.78; color: var(--muted); font-weight: 300; }
 
 /* ══════════════════════════════
-   MAPA
+   MAPA — MEJORA 3: iframe responsive
 ══════════════════════════════ */
-.map-wrapper { margin-top: 2.8rem; border: 1px solid var(--b); overflow: hidden; border-radius: var(--r); box-shadow: 0 12px 40px rgba(0,0,0,0.45); }
-.map-wrapper iframe { display: block; width: 100%; height: 490px; border: none; }
-.map-points { display: grid; grid-template-columns: repeat(auto-fill,minmax(195px,1fr)); gap: 1px; margin-top: 1px; background: var(--b); }
-.map-point { background: var(--dark-3); padding: 1.3rem 1.5rem; cursor: none; transition: background 0.2s; }
+.map-wrapper {
+  margin-top: 2.8rem; border: 1px solid var(--b);
+  overflow: hidden; border-radius: var(--r);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+.map-wrapper iframe {
+  display: block; width: 100%;
+  height: 490px; /* escritorio */
+  border: none;
+}
+.map-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(195px,1fr));
+  gap: 1px; margin-top: 1px; background: var(--b);
+}
+.map-point {
+  background: var(--dark-3); padding: 1.3rem 1.5rem;
+  cursor: none; transition: background 0.2s;
+}
 .map-point:hover { background: var(--gold-glow); }
 .mp-num { font-family: 'DM Mono',monospace; font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; margin-bottom: 0.4rem; }
 .mp-name { font-family: 'Playfair Display',serif; font-size: 0.98rem; margin-bottom: 0.25rem; font-weight: 600; }
@@ -625,29 +651,57 @@ nav.scrolled {
 .delay-5 { animation-delay: 0.65s; }
 
 /* ══════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — 1100px
 ══════════════════════════════ */
 @media (max-width: 1100px) {
   .detalle-layout { grid-template-columns: 1fr; gap: 3rem; }
   .detalle-img-wrap { position: static; }
   .cta-section { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+/* ══════════════════════════════
+   RESPONSIVE — 768px (tablet/móvil)
+   MEJORAS 2, 3, 4
+══════════════════════════════ */
 @media (max-width: 768px) {
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
-  nav { padding: 0 1.3rem; }
-  .hamburger { display: block; }
+
+  nav { padding: 0 1.3rem; gap: 0.6rem; }
+  .hamburger { display: flex; align-items: center; justify-content: center; }
+
+  /* MEJORA 4: botón lang visible y con buen tamaño táctil en móvil */
+  .lang-btn {
+    font-size: 0.75rem;
+    padding: 0.45rem 1rem;
+    min-width: 52px; min-height: 40px;
+    border: 1.5px solid var(--gold);
+    background: rgba(200,151,58,0.08);
+  }
+
+  /* MEJORA 2: menú abierto con ítems más grandes y táctiles */
   .nav-links {
     display: none; position: absolute;
     top: 66px; left: 0; right: 0;
-    background: rgba(9,8,7,0.97);
-    flex-direction: column; padding: 0.6rem;
+    background: rgba(9,8,7,0.98);
+    flex-direction: column; padding: 0.5rem;
     border-bottom: 1px solid var(--b);
     backdrop-filter: blur(20px);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 0.85rem 1.1rem; border-bottom: 1px solid var(--b); font-size: 0.86rem; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    padding: 1rem 1.3rem;    /* más área de toque */
+    border-bottom: 1px solid var(--b);
+    font-size: 0.92rem;      /* texto más legible en móvil */
+    opacity: 0.75;
+    letter-spacing: 0.06em;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-links a::after { content: '→'; font-size: 0.75rem; opacity: 0.5; }
+  .nav-links a.active { opacity: 1; }
   .nav-links li:last-child a { border-bottom: none; }
+
   #hero { padding: 0 1.5rem; }
   .hero-content { max-width: 100%; }
   .hero-stats { max-width: 100%; }
@@ -663,11 +717,54 @@ nav.scrolled {
   .preview-grid { grid-template-columns: 1fr; }
   .purpose-strip { padding: 1rem 1.5rem; flex-direction: column; align-items: flex-start; }
   .hero-scroll-hint { left: 1.5rem; }
+
+  /* MEJORA 3: mapa responsive en tablet */
+  .map-wrapper iframe { height: 360px; }
+  .map-points { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ══════════════════════════════
+   RESPONSIVE — 480px (móvil pequeño)
+   MEJORA 5: revisión completa
+══════════════════════════════ */
 @media (max-width: 480px) {
-  .hero-actions { flex-direction: column; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { text-align: center; justify-content: center; }
   .h-divider { display: none; }
   .cta-btns { flex-direction: column; }
+  .cta-btns .btn-primary,
+  .cta-btns .btn-ghost { text-align: center; justify-content: center; }
+
+  /* Stats apilados verticalmente */
   .hero-stats { flex-direction: column; gap: 1.5rem; }
-  .s-item + .s-item { border-left: none; border-top: 1px solid var(--b); padding-left: 0; padding-top: 1.5rem; }
+  .s-item + .s-item {
+    border-left: none; border-top: 1px solid var(--b);
+    padding-left: 0; padding-top: 1.5rem;
+  }
+
+  /* MEJORA 3: mapa mucho más pequeño en móvil */
+  .map-wrapper iframe { height: 260px; }
+  .map-points { grid-template-columns: 1fr; }
+
+  /* Page nav con botones apilados si no caben */
+  .page-nav { flex-direction: column; gap: 0.8rem; align-items: flex-start; padding: 1.3rem 1.2rem; }
+
+  /* Sección hero de páginas internas más compacta */
+  .page-hero { height: 42vh; min-height: 280px; }
+  .page-hero-overlay { padding: 1.5rem 1.2rem; }
+
+  /* Padding general más ajustado */
+  .section-pad { padding: 3.5rem 1.2rem; }
+  .quote-section { padding: 4rem 1.2rem; }
+  .cta-section { padding: 3.5rem 1.2rem; }
+  .main-footer { padding: 2.5rem 1.2rem; }
+
+  /* Detalle: layout simple en móvil pequeño */
+  .detalle-layout { gap: 2rem; }
+  .detalle-img { aspect-ratio: 16/9; }
+
+  /* Propósito strip más compacto */
+  .purpose-strip { padding: 0.85rem 1.2rem; gap: 0.8rem; }
+  .purpose-strip p { font-size: 0.82rem; }
 }
